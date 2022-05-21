@@ -1,7 +1,7 @@
 ## ubuntu20.04/22.04 C++ 环境安装
 >推荐安装[xubuntu](https://xubuntu.org/)或者[kubuntu](https://kubuntu.org/)，它比gnome的Ubuntu轻量稳定好用得多，追求新的话则推荐使用fedora(它的缺点是，没法安装旧版本的软件，例如GCC，若开发需要特定GCC版本的话，还是使用ubuntu比较方便，同时ubuntu的软件和文档还是比fedora多一些)  
->ubuntu软件列表在[这里](https://packages.ubuntu.com/)
->开发环境的一键安装脚本请看[这里](https://gitee.com/calfmark/my_study_notes_and_articles/tree/master/src/scripts/ubuntu_install_cpp) 
+>ubuntu软件列表在[这里](https://packages.ubuntu.com/)  
+>开发环境的一键安装脚本请看: src/scripts/ubuntu_install_cpp/
 
 ### 基本工具安装
 ```

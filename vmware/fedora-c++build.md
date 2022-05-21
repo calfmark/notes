@@ -1,6 +1,6 @@
 ## fedora36 C++ 环境安装
 >dnf命令请参考[这里](https://wangchujiang.com/linux-command/c/dnf.html)  
->开发环境的一键安装脚本请看[这里](https://gitee.com/calfmark/my_study_notes_and_articles/tree/master/src/scripts/fedora_install_cpp)  
+>开发环境的一键安装脚本请看: src/scripts/fedora_install_cpp/  
 >fedora支持的软件列表请查看[这里](https://packages.fedoraproject.org/)，软件源在[这里](https://src.fedoraproject.org/)  
 
 ### 更新系统包
