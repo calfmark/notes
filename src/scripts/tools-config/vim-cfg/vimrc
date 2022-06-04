@@ -1,0 +1,79 @@
+set fileencodings=ucs-bom,utf-8,euc-cn,cp936,gb18030
+set encoding=utf-8
+set fencs=utf-8,gbk
+
+if has("win32")
+set guifont=Consolas:h11:cANSI
+set guifontwide=NSimSun:h12
+endif
+
+au Filetype make set noexpandtab
+
+set nocompatible
+set autowrite
+set autoread
+set nobackup
+
+set autoindent
+set smartindent
+set cindent
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+
+"set textwidth=90
+"set wrapmargin=90
+
+
+set wrap
+set list
+set listchars=tab:>-,trail:-
+set showcmd
+set ruler
+set cmdheight=2
+set laststatus=2
+set hlsearch
+set number
+set background=dark
+set backspace=2
+set whichwrap+=<,>,h,l
+set mouse=
+set novisualbell
+set noerrorbells
+
+2mat ErrorMsg '\%101v.' 
+
+syntax enable
+syntax on
+
+colorscheme desert
+
+set tags+=/data/tags
+
+"taglist
+"打开方法:Tlist
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+
+"Tlist切换快捷键
+nnoremap <silent> <F9> :Tlist<CR>
+
+"c/h切换快捷键
+nnoremap <silent> <F12> :A<CR>
+
+
+nnoremap <silent> <F3> :Rgrep<CR>
+
+"ctag自动补全配置
+filetype plugin indent on
+set completeopt=longest,menu
+
+"set cursorcolumn
+"set cursorline
+
+"highlight CursorLine    ctermbg=darkgray ctermfg=none
+"highlight CursorColumn  ctermbg=white ctermfg=none
+

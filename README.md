@@ -8,8 +8,15 @@
 
 ## vscode
 * [C++ VScode开发环境搭建](vscode/win10+WSL2+Ubuntu+VScode+C++开发环境搭建.md)
+* [ubuntu vscode C++ 开发调试环境安装](vscode/Ubuntu%20vscode%20C%2B%2B%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md)
 
 ## 虚拟机
 * [vmware虚拟机性能优化](vmware/vmware-optimize.md)
 * [ubuntu c++开发环境搭建](vmware/ubuntu-c%2B%2Bbuild.md)
 * [fedora c++开发环境搭建](vmware/fedora-c%2B%2Bbuild.md)
+
+## wsl
+* [将wsl子机安装到某个目录](wsl/wsl2-install-to-dir.md)
+
+## ubuntu
+* [命令行CLI设置proxy方式](ubuntu/set_proxy.md)

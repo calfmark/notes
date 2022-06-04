@@ -4,6 +4,8 @@
 - 手段触发VMware共享目录挂载命令：
 
   ```
+    sudo apt install -y open-vm-tools
+    sudo apt install -y open-vm-tools-desktop
     sudo mkdir -p /mnt/hgfs
     sudo vmhgfs-fuse .host:/ /mnt/hgfs/
   ```
