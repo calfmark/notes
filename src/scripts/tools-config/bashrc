@@ -20,6 +20,17 @@ if [[ $(df -h | grep hgfs | wc -l) -eq 0 ]];then
 fi
 
 ## root config
-PS1="[\[\e[31;40m\]\u\[\e[37;40m\]:\[\e[36;40m\]\w\[\e[0m\]]# "
-export EDITOR=vim
+#PS1="[\[\e[31;40m\]\u\[\e[37;40m\]:\[\e[36;40m\]\w\[\e[0m\]]# "
+#export EDITOR=vim
 
+#alias cku='ssh -t  xxx@xxx.xxx.xx.xxx '\''cd ~/xxx/ && exec bash -l'\'''
+alias cman='man -M /usr/share/man/zh_CN'
+alias gcl='git clean -d -i'
+alias gl='git log -20'
+alias gpl='git log --pretty=oneline -20'
+alias gppl='git log --pretty=format:"%h | %an | %cr | %s" -20'
+
+#alias mwget='wget --no-cookie --no-check-certificate '
+alias rm='rm -vi'
+alias vi='vim'
+#alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'

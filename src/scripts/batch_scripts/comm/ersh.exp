@@ -1,0 +1,91 @@
+#!/usr/bin/expect  -- 
+#exp_internal 1
+set timeout -1 
+set yesnoflag 0
+if { [llength $argv] < 3} {
+  puts "usage: $argv0  cmd user passwd ip "
+  exit 1
+}
+
+	spawn ssh -p36000 [lindex $argv 3]  -l[lindex $argv 1] -q
+
+	expect 	{
+			        "assword:" {
+								send "[lindex $argv 2]\r" 
+								expect {
+										"#" {send "[lindex $argv 0] \r"} 
+										">" {send "[lindex $argv 0] \r"} 
+										"$ " {send "[lindex $argv 0] \r"} 
+										}
+								expect {
+										"#" {send "sleep 1 \r"} 
+										">" {send "sleep 1 \r"}
+										"$ " {send "sleep 1 \r"}
+										}
+								expect {
+										"#" {send "exit\r"} 
+										">" {send "exit\r"}
+										"$ " {send "exit\r"}
+										}
+								expect eof 
+								}
+					 "yes/no)?" {
+								set yesnoflag 1
+								send "yes\r" 		
+								}
+			}
+
+if { $yesnoflag == 1 } {
+	expect {
+		"assword:" {
+			send "[lindex $argv 2]\r" 
+				expect {
+					"#" {send "[lindex $argv 0] \r"} 
+					">" {send "[lindex $argv 0] \r"} 
+					"$ " {send "[lindex $argv 0] \r"} 
+				}
+			expect {
+				"#" {send "sleep 1 \r"} 
+				">" {send "sleep 1 \r"}
+				"$ " {send "sleep 1 \r"}
+			}
+			expect {
+				"#" {send "exit\r"} 
+				">" {send "exit\r"}
+				"$ " {send "exit\r"}
+			}
+			expect eof 
+		}
+
+		"yes/no)?" {
+			set yesnoflag 2
+				send "yes\r"
+		}
+	}
+}
+
+if { $yesnoflag == 2 } {
+	expect {
+		"assword:" {
+			send "[lindex $argv 2]\r" 
+				expect {
+					"#" {send "[lindex $argv 0] \r"} 
+					">" {send "[lindex $argv 0] \r"} 
+					"$ " {send "[lindex $argv 0] \r"} 
+				}
+			expect {
+				"#" {send "sleep 1 \r"} 
+				">" {send "sleep 1 \r"}
+				"$ " {send "sleep 1 \r"}
+			}
+			expect {
+				"#" {send "exit\r"} 
+				">" {send "exit\r"}
+				"$ " {send "exit\r"}
+			}
+			expect eof 
+		}
+	}
+}
+
+

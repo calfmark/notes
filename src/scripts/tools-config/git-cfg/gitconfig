@@ -1,0 +1,35 @@
+[http]
+        sslVerify = false
+[user]
+        email = xxxx@xxx.com
+        name = xxxx
+[credential]
+        helper = store
+[log]
+  date = relative
+[format]
+  #pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
+  pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+  #pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+
+[core]
+        editor = vim
+        excludesfile = ~/.gitignore
+[merge]
+        tool = vimdiff
+[diff]
+        algorithm = histogram
+[color]
+        ui = true
+[alias]
+        st = status
+        br = branch
+        co = checkout
+        ci = commit
+        ll = log -p
+        list = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)%an%C(reset) %C(dim blue)(%ar)%C(reset)' -M
+        history = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(dim white)%an%C(reset) %C(dim blue)(%ar)%C(reset)' --all
+[pull]
+        rebase = true
+[commit]
+        #template = ~/.git-commit.template

@@ -20,3 +20,18 @@
 
 ## ubuntu
 * [命令行CLI设置proxy方式](ubuntu/set_proxy.md)
+* [联想一体机安装win10和kubuntu双系统方法](ubuntu/two_os_install_step.md)
+
+## Fedora
+* [xfce修改显示桌面快捷键](src/scripts/fedora_install_cpp/xfce_config.md)
+
+## cpp
+* [c++容易搞错的知识点](cpp/basic_cpp_knowledge.md)
+
+
+## git
+* [提交代码时自动格式化代码](git/git_auto_format.md)
+
+## clion
+* [vimidea配置](clion/vimidea_config.md)
+

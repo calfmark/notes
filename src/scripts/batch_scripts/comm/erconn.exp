@@ -1,0 +1,35 @@
+#!/usr/bin/expect  -- 
+#set timeout -1 
+set timeout 15
+if { [llength $argv] < 2} {
+  puts "usage: $argv0 user ip "
+  exit 1
+}
+
+	
+	spawn /usr/local/bin/ssh2 -p36000 -q [lindex $argv 0]@[lindex $argv 1]
+
+	expect {
+				"Are you sure you want to continue connecting (yes/no)? " 
+				{
+					exp_send "yes\r"
+					exp_continue
+				}
+				"Do you want to change the host key on disk (yes/no)? "
+				{
+					exp_send "yes\r"
+					exp_continue
+				}
+				"assword:"
+				{
+					exit 0
+				}
+
+				timeout {exit 1}
+		}
+
+
+
+
+
+

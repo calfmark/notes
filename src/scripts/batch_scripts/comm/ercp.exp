@@ -1,0 +1,30 @@
+#!/usr/bin/expect  -- 
+set timeout -1 
+
+if { [llength $argv] < 5} {
+	puts "usage: $argv0 filename  dir user passwd ip "
+		exit 1
+}
+
+
+spawn	/usr/local/bin/scp -q -P 36000 [lindex $argv 0]  [lindex $argv 2]@[lindex $argv 4]:[lindex $argv 1]
+
+expect 	{
+	"assword:" {
+		send "[lindex $argv 3]\r" 
+			expect eof 
+	}
+	"yes/no)?" {
+		send "yes\r" 		
+			expect "assword:" {
+				send "[lindex $argv 3]\r" 
+					expect eof 
+			}
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+#!/usr/bin/expect  -- 
+set timeout -1 
+
+if { [llength $argv] < 3} {
+	puts "usage: $argv0 user passwd ip "
+		exit 1
+}
+
+
+spawn	/usr/local/bin/scp -q -P 36000 checkpasswd.exp [lindex $argv 0]@[lindex $argv 2]:/tmp
+
+expect 	{
+	"assword:" {
+		send "[lindex $argv 1]\r" 
+			expect {
+                "assword:" {exit 1}
+                eof {exit 0}
+            }
+	}
+	"yes/no)?" {
+		send "yes\r" 		
+			expect "assword:" {
+				send "[lindex $argv 1]\r" 
+					expect {
+                        "assword:" {exit 1}
+                        eof {exit 0}
+                    }
+			}
+	}
+}
+
+
+
+
+
+

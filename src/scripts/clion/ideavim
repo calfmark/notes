@@ -1,0 +1,117 @@
+" no backup
+set noundofile
+set nobackup
+set noswapfile
+
+set nu
+" 反向行号
+set rnu
+
+set ignorecase
+set smartcase
+
+" set scrolloff=2
+set showmode
+set history=10000
+
+" 搜索高亮
+set hlsearch
+set incsearch
+
+" 屏幕滚动时在光标上下方保留5行预览代码
+set so=5
+
+" 提示音静音
+set noerrorbells
+set visualbell
+
+" 语法高亮
+syntax enable
+syntax on
+
+"代码换行时自动缩进
+set ai
+
+"设置主题-沙漠色
+colorscheme desert
+
+"总是显示状态行
+set laststatus=2
+
+" go to somewhere (g in normal mode for goto somewhere)
+nnoremap gc :<C-u>action GotoClass<CR>
+nnoremap gf :<C-u>action GotoFile<CR>
+nnoremap gs :<C-u>action GotoSymbol<CR>
+nnoremap ga :<C-u>action GotoAction<CR>
+
+nnoremap gu :<C-u>action ShowUsages<CR>
+" ShowErrorDescription – 显示文本光标下（光标悬停）错误的描述。
+nnoremap ge :<C-u>action ShowErrorDescription<CR>
+" QuickJavaDoc – Quick Documentation（快速文档，适用于所有语言）。
+nnoremap gd :<C-u>action QuickJavaDoc<CR>
+" QuickImplementations – 提供一个工具提示，包含有关文本光标下的符号的更多详细信息。
+nnoremap gi :<C-u>action QuickImplementations<CR>
+
+nnoremap gl :<C-u>action JumpToLastChange<CR>
+nnoremap gr :<C-u>action RecentFiles<CR>
+
+" 使用空格加 hl 来切换标签页
+nnoremap <space>h gT
+nnoremap <space>l gt
+
+nnoremap rp :<C-u>action Replace<CR>
+nnoremap ff :<C-u>action Find<CR>
+nnoremap fp :<C-u>action FindInPath<CR>
+
+
+" ==================================================
+" Emulated Vim Plugins
+" ==================================================
+" surroud 快捷键:
+" -----------
+" ds  - delete a surrounding
+" cs  - change a surrounding
+" ys  - add a surrounding
+" yS  - add a surrounding and place the surrounded text on a new line + indent it
+" yss - add a surrounding to the whole line
+" ySs - add a surrounding to the whole line, place it on a new line + indent it
+" ySS - same as ySs
+" 
+" Visual mode
+" -----------
+" s   - in visual mode, add a surrounding
+" S   - in visual mode, add a surrounding but place text on new line + indent it
+set surround
+
+" easymotion 快捷键:
+" Default Mapping      | Details
+" ---------------------|----------------------------------------------
+" <Leader>f{char}      | Find {char} to the right. See |f|.
+" <Leader>F{char}      | Find {char} to the left. See |F|.
+" <Leader>t{char}      | Till before the {char} to the right. See |t|.
+" <Leader>T{char}      | Till after the {char} to the left. See |T|.
+" <Leader>w            | Beginning of word forward. See |w|.
+" <Leader>W            | Beginning of WORD forward. See |W|.
+" <Leader>b            | Beginning of word backward. See |b|.
+" <Leader>B            | Beginning of WORD backward. See |B|.
+" <Leader>e            | End of word forward. See |e|.
+" <Leader>E            | End of WORD forward. See |E|.
+" <Leader>ge           | End of word backward. See |ge|.
+" <Leader>gE           | End of WORD backward. See |gE|.
+" <Leader>j            | Line downward. See |j|.
+" <Leader>k            | Line upward. See |k|.
+" <Leader>n            | Jump to latest "/" or "?" forward. See |n|.
+" <Leader>N            | Jump to latest "/" or "?" backward. See |N|.
+" <Leader>s            | Find(Search) {char} forward and backward.
+"                      | See |f| and |F|.
+" 向后向前跳转
+" <ll>w
+" <ll>b
+" 双向跳转
+" <ll>j
+" <ll>k
+let g:EasyMotion_override_acejump = 0
+let mapleader="."
+set easymotion
+
+" acejump 快捷键为ctrl + shift + ;

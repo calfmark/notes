@@ -93,4 +93,5 @@ https_proxy = http://10.10.1.10:8080/
 ftp_proxy = http://10.10.1.10:8080/
 ```
 
-### 推荐直接在firefox的设置里进行配置代理即可
+### 推荐直接在firefox/git/chrome/edge的设置里进行配置代理即可
+note: 在firefox里设置代理时，只需要输入ip端口就可以了，不要输入http://
