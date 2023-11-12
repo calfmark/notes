@@ -92,3 +92,32 @@ sudo apt install -y net-tools
 # 安装xubuntu的桌面，体积比较大
 #sudo apt install xubuntu-desktop
 ~
+#删除swap
+# 在/etc/fstab中将swap挂载注释掉
+#cat /etc/fstab | grep swap
+#sudo sed -e '/swap/ s/^#*/#/' -i /etc/fstab 
+#sudo swapon --show
+#sudo swapoff -a
+#sudo zramctl -r /dev/zram0
+#sudo systemctl --type swap
+#sudo systemctlsystemctl list-unit-files | grep swap
+#sudo systemctl disable dev-zram0.swap
+#sudo systemctl disable swap.target
+#sudo systemctl disable systemd-cryptsetup@cryptswap.service
+#sudo systemctl stop dev-zram0.swap
+#sudo systemctl stop swap.target
+#sudo systemctl stop systemd-cryptsetup@cryptswap.service
+#sudo systemctl mask dev-zram0.swap
+#sudo systemctl mask swap.target
+#sudo systemctl mask systemd-cryptsetup@cryptswap.service
+
+#以上配置重启后不生效，临时解决办法：在~/.bashrc中加入以下内容：
+#swapcnt=`sudo swapon --show | wc -l`
+#if [ $swapcnt -ne 0 ];then
+#    sudo systemctl stop dev-zram0.swap
+#    sudo systemctl stop swap.target
+#    sudo systemctl stop systemd-cryptsetup@cryptswap.service
+#    sudo swapoff -a
+#    sudo zramctl -r /dev/zram0
+#fi
+
