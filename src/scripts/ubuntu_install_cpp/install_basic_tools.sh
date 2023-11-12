@@ -35,7 +35,8 @@ sudo apt install -y valgrind
 # sudo apt install -y libnotify-bin
 
 # 系统信息获取
-sudo apt install -y neofetch screenfetch
+sudo apt install -y neofetch
+#sudo apt install -y screenfetch
 
 # ifconfig
 sudo apt install -y net-tools
@@ -91,7 +92,7 @@ sudo apt install -y net-tools
 
 # 安装xubuntu的桌面，体积比较大
 #sudo apt install xubuntu-desktop
-~
+
 #删除swap
 # 在/etc/fstab中将swap挂载注释掉
 #cat /etc/fstab | grep swap
